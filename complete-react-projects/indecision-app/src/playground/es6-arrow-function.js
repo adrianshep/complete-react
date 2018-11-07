@@ -23,10 +23,10 @@
 // const fullName = 'Andrew Mead';
 // let firstName;
 
-let firstName = (fullName) => {
+const getFirstName = (fullName) => {
     return fullName.split(' ')[0];
   }
 
-let firstName = (fullName) => fullName.split(' ')[0];
+const getFirstName = (fullName) => fullName.split(' ')[0];
 
-// console.log(firstName('Jen Mead'));
+// console.log(getFirstName('Mike Smith'));
