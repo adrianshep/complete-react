@@ -16,3 +16,17 @@ const user = {
   }
 };
 console.log(user.printPlacesLived());
+
+// Challenge squareArrow
+const multiplier = {
+  // numbers - array of numbers
+  numbers: [1, 3, 9],
+  // multiplyBy - single number
+  multiplyBy: 4,
+  // multiply - return a new array where the numbers have been multiplied
+  multiply() {
+    return this.numbers.map((number => this.multiplyBy * number));
+  }
+};
+
+console.log(multiplier.multiply());
