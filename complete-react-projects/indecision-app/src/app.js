@@ -20,26 +20,17 @@ console.log('App.js is running!')
     </div>
   );
 
-  const user = {
-    name: 'Adam',
-    age: 17,
-    location: 'New Meeting, PA'
-  };
-
-  function getLocation(location) {
-    if (location) {
-      return <p>Location: {location}</p>;
-    }
-  };
-
-  const templateTwo = (
-    <div>
-      <h1>{user.name ? user.name : 'Anonymous'}</h1>
-      {(user.age && user.age >= 18) && <p>Age: {user.age}</p>}
-      {getLocation(user.location)}
-    </div>
+let count = 0;
+const addOne = () => {
+  console.log('addOne');
+};
+const templateTwo = (
+  <div>
+    <h1>Count: {count}</h1>
+    <button onClick={addOne}>+1</button>
+  </div>
 );
-
+console.log(templateTwo);
 const appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
