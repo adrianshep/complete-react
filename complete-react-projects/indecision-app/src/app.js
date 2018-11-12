@@ -19,6 +19,8 @@ console.log('App.js is running!');
     }
   };
 
+const appRoot = document.getElementById('app');
+
 const renderOptionsApp = () => {
     const template = (
       <div>
@@ -37,7 +39,6 @@ const renderOptionsApp = () => {
       </div>
     );
 
-  const appRoot = document.getElementById('app');
   ReactDOM.render(template, appRoot);
 };
 // and call render function here
