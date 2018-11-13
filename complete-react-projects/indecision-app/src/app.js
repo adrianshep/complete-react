@@ -8,7 +8,7 @@ console.log('App.js is running!');
 
   const onRemoveAll = () => {
     app.options = [];
-    renderOptionsApp();
+    render();
   };
 
   const onFormSubmit = (e) => {
@@ -20,13 +20,15 @@ console.log('App.js is running!');
       app.options.push(option);
       e.target.elements.option.value = '';
       // call render function here after options array is added to
-      renderOptionsApp();
+      render();
     }
   };
 
 const appRoot = document.getElementById('app');
 
-const renderOptionsApp = () => {
+const numbers = [55, 101, 1000];
+
+const render = () => {
     const template = (
       <div>
         <h1>{app.title}</h1>
@@ -34,9 +36,14 @@ const renderOptionsApp = () => {
         <p>{app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
         <p>{app.options.length}</p>
         <button onClick={onRemoveAll}>Remove All</button>
+        {
+            numbers.map((number) => {
+            return <p key={number}>Number: {number}</p>;
+          })
+        }
         <ol>
-          <li>Item one</li>
-          <li>Item two</li>
+          <li>first option</li>
+          <li>second option</li>
         </ol>
         <form onSubmit={onFormSubmit}>
           <input type="text" name="option"/>
@@ -48,4 +55,4 @@ const renderOptionsApp = () => {
   ReactDOM.render(template, appRoot);
 };
 // and call render function here
-renderOptionsApp();
+render();
