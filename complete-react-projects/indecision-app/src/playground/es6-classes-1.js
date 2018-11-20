@@ -1,32 +1,21 @@
 
 class Person {
-  constructor(name = 'Anonymous') {
+  constructor(name = 'Anonymous', age = 0) {
     this.name = name;
+    this.age = age;
   }
   getGreeting() {
     // return 'Hi. I am ' + this.name + '!';
     return `Hi. I am ${this.name}!`;
   }
-}
 
-class PersonAge {
-  constructor(name = 'Anonymous', age = 0) {
-    this.name = name;
-    this.age = age;
-  }
   getDescription() {
     return `${this.name} is ${this.age} year(s) old.`;
   }
 }
 
-const me = new Person('Dennis Zoriani');
-console.log(me.getGreeting());
+const me = new Person('Dennis Zoriani', 15);
+console.log(me.getDescription());
 
 const other = new Person();
-console.log(other.getGreeting());
-
-const him = new PersonAge('Dennis Zoriani', 15);
-console.log(him.getDescription());
-
-const anon = new PersonAge();
-console.log(anon.getDescription());
+console.log(other.getDescription());
