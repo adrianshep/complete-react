@@ -33,8 +33,27 @@ class Student extends Person {
   }
 }
 
-const me = new Student('Dennis Zoriani', 18, 'Music Composition');
-console.log(me.getDescription());
+class Traveler extends Person {
+  constructor(name, age, homeLocation) {
+    super(name, age);
+    this.homeLocation = homeLocation;
+  }
+  hasHomeLocation() {
+    return !!this.homeLocation;
+  }
+  getGreeting() {
+    let greeting = super.getGreeting();
 
-const other = new Student();
-console.log(other.getDescription());
+    if (this.hasHomeLocation()) {
+      greeting += ` I'm visiting from ${this.homeLocation}.`;
+    }
+
+    return greeting;
+  }
+}
+
+const me = new Traveler('Dennis Zoriani', 18, 'Rogerstowne, NY');
+console.log(me.getGreeting());
+
+const other = new Traveler();
+console.log(other.getGreeting());
