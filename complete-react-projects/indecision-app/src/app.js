@@ -19,10 +19,32 @@ class Action extends React.Component {
   }
 }
 
+class Options extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Options component here</h1>
+      </div>
+    );
+  }
+}
+
+class AddOption extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>AddOption component here</h1>
+      </div>
+    );
+  }
+}
+
 const jsx = (
   <div>
     <Header />
     <Action />
+    <Options />
+    <AddOption />
   </div>
 );
 
