@@ -23,7 +23,7 @@ class Options extends React.Component {
   render() {
     return (
       <div>
-        <h1>Options component here</h1>
+        Options component here
       </div>
     );
   }
@@ -33,7 +33,7 @@ class AddOption extends React.Component {
   render() {
     return (
       <div>
-        <h1>AddOption component here</h1>
+        AddOption component here
       </div>
     );
   }
