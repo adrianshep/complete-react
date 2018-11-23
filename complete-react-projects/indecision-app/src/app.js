@@ -38,6 +38,7 @@ class Options extends React.Component {
       <div>
         Options component here
         <Option />
+        {/*can also use <Option></Option> but above shorthand preferable*/}
       </div>
     );
   }
