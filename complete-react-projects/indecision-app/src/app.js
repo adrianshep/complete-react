@@ -40,8 +40,7 @@ class Options extends React.Component {
   render() {
     return (
       <div>
-        <p>Options component here</p>
-        <p>{this.props.options.length}</p>
+        {this.props.options.length}
         <Option />
       </div>
     );
