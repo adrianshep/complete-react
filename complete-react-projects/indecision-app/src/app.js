@@ -1,14 +1,3 @@
-const obj = {
-  name: 'Frank',
-  getName() {
-    return this.name;
-  }
-};
-{/* setting this context with bind's first argument, in case below, forcing this context to be the inline object: */}
-const getName = obj.getName.bind({ name: 'Tom' });
-
-console.log(getName());
-
 class IndecisionApp extends React.Component {
   render() {
     const title = 'Indecision';
@@ -51,6 +40,10 @@ class Action extends React.Component {
 }
 
 class Options extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleRemoveAll = this.handleRemoveAll.bind(this);
+  }
   handleRemoveAll() {
     console.log(this.props.options);
     // alert('handleRemoveAll');
