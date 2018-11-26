@@ -4,8 +4,8 @@ const obj = {
     return this.name;
   }
 };
-
-const getName = obj.getName.bind(obj);
+{/* setting this context with bind's first argument, in case below, forcing this context to be the inline object: */}
+const getName = obj.getName.bind({ name: 'Tom' });
 
 console.log(getName());
 
