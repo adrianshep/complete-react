@@ -15,11 +15,9 @@ class IndecisionApp extends React.Component {
     });
   }
   handlePick() {
-    this.setState((prevState) => {
-      return {
-        alert("Hi!");
-      };
-    });
+    const randomNum = Math.floor(Math.random() * this.state.options.length);
+    const option = this.state.options[randomNum];
+    alert(option);
   }
 
   render() {
@@ -30,8 +28,7 @@ class IndecisionApp extends React.Component {
       <div>
         <Header title={title} subtitle={subtitle} />
         <Action hasOptions={this.state.options.length > 0}
-          options={this.state.options}
-          handlePick={this.state.handlePick}
+          handlePick={this.handlePick}
         />
         <Options options={this.state.options}
           handleDeleteOptions={this.handleDeleteOptions}
