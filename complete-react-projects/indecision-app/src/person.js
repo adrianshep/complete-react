@@ -1,19 +1,4 @@
-console.log('person.js is running');
-
-const isAdult = (age) => {
-  if (age >= 18) {
-    console.log('true');
-  } else {
-    console.log('false');
-  }
-};
-
-const canDrink = (age) => {
-  if (age >= 21) {
-    console.log('true');
-  } else {
-    console.log('false');
-  }
-}
+const isAdult = (age) => age >= 18;
+const canDrink = (age) => age >= 21;
 
 export { isAdult, canDrink };
