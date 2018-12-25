@@ -32,11 +32,15 @@ export default class IndecisionApp extends React.Component {
     } else if (this.state.options.indexOf(option) > -1) {
       return 'This option already exists';
     }
-
     this.setState((prevState) => ({
       options: prevState.options.concat(option)
     }));
   };
+  handleClearSelectedOption = () => {
+    this.setState(() => ({
+      selectedOption: undefined
+    }));
+  }
   componentDidMount() {
     try {
       const json = localStorage.getItem('options');
@@ -78,6 +82,7 @@ export default class IndecisionApp extends React.Component {
         />
         <OptionModal
           selectedOption={this.state.selectedOption}
+          handleClearSelectedOption={this.handleClearSelectedOption}
         />
       </div>
     );
