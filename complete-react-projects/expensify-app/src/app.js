@@ -37,6 +37,10 @@ const NotFoundPage = () => (
 const Header = () => (
   <header>
     <h1>Expensify</h1>
+    <div><Link to="/">Home</Link></div>
+    <div><Link to="/create">Add Expense</Link></div>
+    <div><Link to="/edit">Edit Expense</Link></div>
+    <div><Link to="/help">Help</Link></div>
   </header>
 );
 
