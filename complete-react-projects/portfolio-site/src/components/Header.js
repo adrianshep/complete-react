@@ -5,7 +5,7 @@ const Header = () => (
   <header>
     <h1>Portfolio</h1>
     <div><NavLink to="/" activeClassName="is-active" exact={true}>Home</NavLink></div>
-    <div><NavLink to="/portfolio" activeClassName="is-active">Portfolio</NavLink></div>
+    <div><NavLink to="/portfolio" activeClassName="is-active" exact={true}>Portfolio</NavLink></div>
     <div><NavLink to="/contact" activeClassName="is-active">Contact</NavLink></div>
   </header>
 );
