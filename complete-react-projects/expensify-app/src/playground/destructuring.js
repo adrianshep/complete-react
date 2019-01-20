@@ -35,6 +35,12 @@
 // Array destructuring
 //
 
-const address = ['1299 S Juniper Street', 'Philadelphia', 'Pennsylvania', '19147'];
-const [, city, state = 'New York'] = address;
-console.log(`You are in ${city} ${state}.`);
+// const address = ['1299 S Juniper Street', 'Philadelphia', 'Pennsylvania', '19147'];
+// const [, city, state = 'New York'] = address;
+// console.log(`You are in ${city} ${state}.`);
+
+const item = ['Coffee (hot)', '$2.00', '$2.50', '$2.75'];
+const [kind, , medium, ] = item;
+
+console.log(`A medium Coffee (hot) costs $2.50`);
+console.log(`A medium ${kind} costs ${medium}`);
