@@ -40,7 +40,7 @@
 // console.log(`You are in ${city} ${state}.`);
 
 const item = ['Coffee (hot)', '$2.00', '$2.50', '$2.75'];
-const [kind, , medium, ] = item;
+const [itemName, , mediumPrice, ] = item;
 
 console.log(`A medium Coffee (hot) costs $2.50`);
-console.log(`A medium ${kind} costs ${medium}`);
+console.log(`A medium ${itemName} costs ${mediumPrice}`);
