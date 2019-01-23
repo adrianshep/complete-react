@@ -1,5 +1,28 @@
 import { createStore, combineReducers } from 'redux';
 
+// Expenses Reducers
+
+const expensesReducerDefaultState = [];
+
+const expensesReducer = (state = expensesReducerDefaultState, action) => {
+  switch (action.type) {
+    default:
+      return state;
+  }
+};
+
+//  Filters Reducers
+
+// Store creation
+
+const store = createStore(
+  combineReducers({
+    expenses: expensesReducer
+  })
+);
+
+console.log(store.getState());
+
 const demoState = {
   expenses: [{
     id: 'poijasdfhwer',
