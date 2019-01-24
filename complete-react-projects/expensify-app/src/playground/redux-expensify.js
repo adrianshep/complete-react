@@ -13,11 +13,26 @@ const expensesReducer = (state = expensesReducerDefaultState, action) => {
 
 //  Filters Reducers
 
+const filtersReducerDefaultState = {};
+
+const filtersReducer = ( state = filtersReducerDefaultState, action) => {
+  switch (action.type) {
+    default:
+      return {
+        text: '',
+        sortBy: 'date',
+        startDate: undefined,
+        endDate: undefined
+    };
+  }
+}
+
 // Store creation
 
 const store = createStore(
   combineReducers({
-    expenses: expensesReducer
+    expenses: expensesReducer,
+    filters: filtersReducer
   })
 );
 
