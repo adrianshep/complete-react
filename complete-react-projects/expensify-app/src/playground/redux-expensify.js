@@ -20,6 +20,22 @@ const addExpense = (
   }
 });
 
+// REMOVE_EXPENSE
+const removeExpense = (expenseToRemove) => ({
+  expenses: expenses.filter((expenseToRemove) => {
+    return expenseToRemove.id !== expense.id;
+  }
+) => ({
+    type: 'REMOVE_EXPENSE',
+    expense: {
+      id: uuid(),
+      description,
+      note,
+      amount,
+      createdAt
+    }
+});
+
 // Expenses Reducers
 
 const expensesReducerDefaultState = [];
@@ -33,6 +49,11 @@ const expensesReducer = (state = expensesReducerDefaultState, action) => {
       ];
     default:
       return state;
+    case 'REMOVE_EXPENSE':
+      return [
+        ...state,
+        action.expense
+      ];
   }
 };
 
