@@ -21,20 +21,26 @@ const addExpense = (
 });
 
 // REMOVE_EXPENSE
-const removeExpense = (expenseToRemove) => ({
-  expenses: expenses.filter((expenseToRemove) => {
-    return expenseToRemove.id !== expense.id;
-  }
-) => ({
-    type: 'REMOVE_EXPENSE',
-    expense: {
-      id: uuid(),
-      description,
-      note,
-      amount,
-      createdAt
-    }
+const removeExpense = ({ id } = {}) => ({
+  type: 'REMOVE_EXPENSE',
+  id
 });
+
+// my attempts at solution:
+// const removeExpense = (expenseToRemove) => ({
+//   expenses: expenses.filter((expenseToRemove) => {
+//     return expenseToRemove.id !== expense.id;
+//   }
+// ) => ({
+//     type: 'REMOVE_EXPENSE',
+//     expense: {
+//       id: uuid(),
+//       description,
+//       note,
+//       amount,
+//       createdAt
+//     }
+// });
 
 // Expenses Reducers
 
@@ -47,13 +53,10 @@ const expensesReducer = (state = expensesReducerDefaultState, action) => {
         ...state,
         action.expense
       ];
+    case 'REMOVE_EXPENSE':
+      return state.filter(({ id }) => id !== action.id);
     default:
       return state;
-    case 'REMOVE_EXPENSE':
-      return [
-        ...state,
-        action.expense
-      ];
   }
 };
 
