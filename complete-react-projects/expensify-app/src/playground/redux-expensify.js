@@ -34,7 +34,7 @@ const editExpense = (id, updates) => ({
 });
 
 // SET_TEXT_FILTER
-const setTextFilter = (text) => ({
+const setTextFilter = (text = '') => ({
   type: 'SET_TEXT_FILTER',
   text
 });
@@ -86,9 +86,8 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
   switch (action.type) {
     case 'SET_TEXT_FILTER':
       return {
-      action.text;
-      } else {
-      return state;
+      ...state,
+      text: action.text
       };
     default:
       return state;
