@@ -140,9 +140,12 @@ const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
   return expenses.filter((expense) => {
     const startDateMatch = typeof startDate !== 'number' || expense.createdAt >= startDate;
     const endDateMatch = typeof endDate !== 'number' || expense.createdAt <= endDate;
-    const textMatch = true;
+    // sentence.toLowerCase()
+    // 'Blue Whale'.includes('blue');
+    const textMatch = expense.description.toLowerCase().includes(text.toLowerCase());
+    // const textMatch = true;
 
-    return startDate && endDateMatch && textMatch;
+    return startDateMatch && endDateMatch && textMatch;
   });
 };
 
