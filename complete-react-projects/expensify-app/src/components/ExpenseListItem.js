@@ -1,18 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
-const ExpenseListItem = (props) => (
+const ExpenseListItem = ({ description, amount, createdAt }) => (
   <div>
-    {props.expenses.description}
-    {props.expenses.amount}
-    {props.expenses.createdAt}
+    <h3>{description}</h3>
+    <p>{amount} - {createdAt}</p>
   </div>
 );
 
-const mapStateToProps = (state) => {
-  return {
-    expenses: state.expenses
-  };
-};
-
-export default connect(mapStateToProps)(ExpenseListItem);
+export default ExpenseListItem;
