@@ -1,12 +1,17 @@
 const add = (a, b) => a + b;
-const generateGreeting = () => `Hello ${name}!`;
+const generateGreeting = (name = 'Anonymous') => `Hello ${name}!`;
 
 test('should add two numbers', () => {
   const result = add(3, 4);
   expect(result).toBe(7);
 });
 
-test('should generate greeting with name', () => {
-  name = 'Dennis';
-  expect(name).toBe('Dennis');
+test('should generate greeting for name', () => {
+  const result = generateGreeting('Dennis');
+  expect(result).toBe('Hello Dennis!');
+});
+
+test('should generate greeting for no name', () => {
+  const result = generateGreeting();
+  expect(result).toBe('Hello Anonymous!');
 });
