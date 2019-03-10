@@ -1,3 +1,4 @@
+import moment from 'moment';
 import expensesReducer from '../../reducers/expenses';
 import expenses from '../fixtures/expenses';
 
@@ -22,4 +23,17 @@ test('should not remove expense if id not found', () => {
   };
   const state = expensesReducer(expenses, action);
   expect(state).toEqual(expenses);
+});
+
+test('should add an expense', () => {
+  const action = {
+    type: 'ADD_EXPENSE',
+    id: '4',
+    description: 'writing',
+    note: 'fountain pen',
+    amount: 299,
+    createdAt: moment(0).add(2, 'days').valueOf()
+  };
+    const state = expensesReducer(expenses, action);
+    expect(state).toEqual([expenses[0], expenses[1], expenses[2], expenses[3]]);
 });
